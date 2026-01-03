@@ -1,0 +1,111 @@
+* {
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    min-height: 10px;
+    color: #202020;
+    border: none;
+    border-radius: 0px;
+}
+
+/* =================== */
+/* Window Base Styling */
+/* =================== */
+window#waybar {
+    background: #eeeeee; /* Light gray */
+    border-radius: 0px;
+    padding: 0;
+}
+
+/* ========================= */
+/* LEFT SECTION - Workspaces */
+/* ========================= */
+#workspaces button {
+    color: #202020;
+    border: 1px solid #d00000;
+    margin: 2px;
+    padding: 1px 6px;
+    border-radius: 16px;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#workspaces button.active {
+    background: #d00000;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(208, 0, 0, 0.1);
+    color: #000000;
+}
+
+/* ================================ */
+/* LEFT - System Stats (CPU/RAM/T°) */
+/* ================================ */
+#cpu,
+#memory,
+#temperature {
+    background: #ffffff;
+    border-left: none;
+    padding: 0 10px;
+    color: #b00000;
+}
+
+/* ========================= */
+/* CENTER - Clock & Calendar */
+/* ========================= */
+#clock,
+#calendar {
+    background: none;
+    font-size: 13px;
+    padding: 8px 22px;
+    color: #d00000;
+}
+
+/* ============================= */
+/* RIGHT - Network/Audio/Battery */
+/* ============================= */
+#network,
+#pulseaudio,
+#battery {
+    background-color: #ffffff;
+    border-left: none;
+    padding: 0 10px;
+    color: #b00000;
+}
+
+/* ==================== */
+/* THEME NAME INDICATOR */
+/* ==================== */
+#custom-theme {
+    color: #d00000;
+    padding: 0 10px;
+}
+
+/* =============== */
+/* POWER ICON AREA */
+/* =============== */
+#custom-power {
+    font-size: 13px;
+    padding-right: 25px;
+    padding-left: 20px;
+    background-color: #ffffff;
+    color: #d00000;
+}
+
+/* ===== Generic Unknown Modules Styling ===== */
+.modules-left > *,
+.modules-center > *,
+.modules-right > * {
+    background: transparent;
+    color: #202020;
+    padding: 0 8px;
+    min-height: 0;
+    border-left: none;
+}
+
+/* Optional: Add spacing between major sections (left/center/right) */
+.modules-left, .modules-center, .modules-right {
+    margin: 0 8px;
+}

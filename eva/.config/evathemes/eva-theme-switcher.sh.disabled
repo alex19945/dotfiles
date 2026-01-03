@@ -1,0 +1,66 @@
+#!/bin/bash
+
+LOGFILE="$HOME/.config/evathemes/theme-switcher.log"
+WAYBAR_LOG="$LOGFILE.waybar.log"
+
+THEME="$1"
+THEME_DIR="$HOME/.config/evathemes/$THEME"
+WAYBAR_DIR="$HOME/.config/waybar"
+WAYBAR_ETC="/etc/xdg/waybar"
+TARGET_CSS="$WAYBAR_DIR/style.css"
+
+# Create waybar directory if missing
+mkdir -p "$WAYBAR_DIR"
+
+# Validate theme
+if [ ! -f "$THEME_DIR/waybar.css" ]; then
+    echo "$(date): [ERROR] Theme '$THEME' not found at $THEME_DIR" >> "$LOGFILE"
+    exit 1
+fi
+
+# Compare current style with new one
+if ! cmp -s "$THEME_DIR/waybar.css" "$TARGET_CSS"; then
+    cp "$THEME_DIR/waybar.css" "$TARGET_CSS"
+    echo "$(date): Theme switched to $THEME." >> "$LOGFILE"
+else
+    echo "$(date): '$THEME' already active. Checking Waybar status..." >> "$LOGFILE"
+fi
+
+# Kill existing Waybar if running
+if pgrep -x waybar >/dev/null; then
+    pkill -x waybar
+    echo "$(date): Killed existing Waybar process." >> "$LOGFILE"
+    while pgrep -x waybar >/dev/null; do sleep 0.2; done
+fi
+
+# Wait briefly for CSS to sync
+sleep 0.5
+
+# Ensure Hyprland IPC is up
+if ! hyprctl activewindow &>/dev/null; then
+    echo "$(date): Waiting for Hyprland IPC..." >> "$LOGFILE"
+    for i in {1..10}; do
+        sleep 0.5
+        hyprctl activewindow &>/dev/null && break
+    done
+fi
+
+# Set environment for graphical session
+#export DISPLAY=:0
+#export XDG_RUNTIME_DIR=/run/user/$(id -u)
+
+# Start Waybar
+#WAYBAR_CONFIG="$WAYBAR_ETC/config.jsonc" WAYBAR_STYLE="$TARGET_CSS" waybar > "$WAYBAR_LOG" 2>&1 & disown
+#sleep 2
+
+env WAYLAND_DISPLAY=$WAYLAND_DISPLAY XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR \
+WAYBAR_CONFIG="$WAYBAR_ETC/config.jsonc" WAYBAR_STYLE="$TARGET_CSS" \
+waybar &>> "$LOGFILE.waybar.log" &
+
+
+# Verify startup
+if pgrep -x waybar >/dev/null; then
+    echo "$(date): Waybar started successfully." >> "$LOGFILE"
+else
+    echo "$(date): [ERROR] Failed to start Waybar. See $WAYBAR_LOG" >> "$LOGFILE"
+fi
