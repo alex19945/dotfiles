@@ -5,6 +5,7 @@ ark 25.12.0-1
 aubio 0.4.9-23
 base 3-2
 base-devel 1-2
+bat 0.26.1-1
 bluez-deprecated-tools 5.85-1
 bluez-utils 5.85-1
 bpytop 1.0.68-2
@@ -89,6 +90,7 @@ texlive-latexextra 2025.2-2
 texlive-latexrecommended 2025.2-2
 texstudio 4.9.1-1
 thunderbird 145.0-1
+tmux 3.6_a-1
 torbrowser-launcher 0.3.7-3
 ttf-cascadia-code-nerd 3.4.0-1
 vim 9.1.1975-1
