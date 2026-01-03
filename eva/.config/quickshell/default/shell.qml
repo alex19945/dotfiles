@@ -45,7 +45,7 @@ PanelWindow {
         spacing: 8
 
         Repeater {
-            model: 9
+            model: 10 
             Text {
                 property var ws:
                 Hyprland.workspaces.values.find(w=> w.id === index + 1)
