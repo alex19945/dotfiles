@@ -1,3 +1,4 @@
+alacritty 0.16.1-1
 alsa-utils 1.2.15.1-1
 amd-ucode 20251125-2
 app2unit 1.2.1-1
@@ -21,7 +22,7 @@ cmatrix 2.0-4
 dolphin 25.12.0-1
 dunst 1.13.0-1
 efibootmgr 18-3
-fastfetch 2.56.1-1
+fastfetch 2.56.1-2
 fd 10.3.0-1
 firefox 146.0.1-1
 fish 4.3.2-1
@@ -44,14 +45,14 @@ hyprpaper 0.8.1-1
 inetutils 2.6-1
 iwd 3.10-1
 kate 25.12.0-1
-kitty 0.44.0-1
+kitty 0.45.0-1
 konsole 25.12.0-1
 krusader 2.9.0-1
-lazygit 0.57.0-1
+lazygit 0.58.0-1
 less 1:685-1
 libpulse 17.0+r98+gb096704c0-1
 libreoffice-fresh 25.8.4-1
-linux 6.18.2.arch2-1
+linux 6.18.3.arch1-1
 linux-firmware 20251125-2
 lyx 2.4.4-2
 mandoc 1.14.6-5
@@ -63,7 +64,7 @@ nwg-look 1.0.6-1
 obsidian 1.10.6-1
 openssh 10.2p1-2
 otf-ipafont 003.03-9
-pandoc-cli 3.5-2
+pandoc-cli 3.5-5
 pipewire 1:1.4.9-2
 pipewire-alsa 1:1.4.9-2
 pipewire-jack 1:1.4.9-2
@@ -95,7 +96,7 @@ torbrowser-launcher 0.3.7-3
 ttf-cascadia-code-nerd 3.4.0-1
 vim 9.1.1975-1
 vscodium-bin 1.107.18627-1
-vulkan-radeon 1:25.3.2-1
+vulkan-radeon 1:25.3.3-1
 wakeonlan 0.42-2
 wget 1.25.0-3
 wireless_tools 30.pre9-4
