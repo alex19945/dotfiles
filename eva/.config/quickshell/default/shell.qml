@@ -34,6 +34,10 @@ PanelWindow {
     implicitHeight: 30
     color: root.colBg
 
+    Process {
+        id: runner
+    }
+
     function run(cmd) {
         runner.command = cmd
         runner.running = true
