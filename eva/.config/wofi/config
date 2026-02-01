@@ -1,0 +1,9 @@
+[wofi]
+# Set font, colors, and background to EVA aesthetics
+font=monospace 12
+background-color=#FF0000  # Dark background similar to NERV terminals
+text-color=#7FFF00        # Neon green reminiscent of EVA interface text
+selected-bg=#FF6600       # Orange highlight (like EVA 01 activation)
+selected-text=#000000     # Black text on selection
+border-radius=8
+padding=12
