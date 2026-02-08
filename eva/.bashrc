@@ -100,3 +100,4 @@ PROMPT_COMMAND='PS1="\n\[\033[1;97m\]╭─ $(get_box_info)\n\
 alias ls='ls --color=auto'
 fastfetch #--logo "$HOME/.config/fastfetch/ascii/rei.txt"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
