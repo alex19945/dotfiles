@@ -140,7 +140,7 @@ quick_search_mode=2
 select_flags=6
 
 [Panelize]
-Find *.orig efter patchning=find . -name \\*.orig -print
 Find SUID- og SGID-programmer=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
-Ændrede git-filer=git ls-files --modified
 Find rester efter lapning=find . -name \\*.rej -print
+Find *.orig efter patchning=find . -name \\*.orig -print
+Ændrede git-filer=git ls-files --modified
