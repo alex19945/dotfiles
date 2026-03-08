@@ -1,0 +1,113 @@
+* {
+    font-family: 'JetBrainsMono Nerd Font', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    min-height: 10px;
+    color: #ffffff;
+    border: none;
+    border-radius: 0px;
+}
+
+/* =================== */
+/* Window Base Styling */
+/* =================== */
+window#waybar {
+    background: #100822;
+    border-radius: 0px;
+    padding: 0;
+}
+
+/* ========================= */
+/* LEFT SECTION - Workspaces */
+/* ========================= */
+#workspaces button {
+    color: #aaaaff;
+    border: 1px solid #ff2a2a; /* #cc3eff; */
+    margin: 2px;
+    padding: 1px 6px;
+    border-radius: 16px;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#workspaces button.active {
+    background: #ff2a2a;
+    color: #0a0a1a;
+}
+
+#workspaces button:hover {
+    background: rgba(204, 62, 255, 0.2);
+    color: #ffffff;
+}
+
+/* ================================ */
+/* LEFT - System Stats (CPU/RAM/T°) */
+/* ================================ */
+#cpu,
+#memory,
+#temperature {
+    background: #1a0a2a;
+    border-left: none; /* 1px solid #cc3eff; */
+    padding: 0 10px;
+    color: #ff2a2a;
+}
+
+/* ========================= */
+/* CENTER - Clock & Calendar */
+/* ========================= */
+#clock,
+#calendar {
+    background: none;
+    font-size: 13px;
+    padding: 8px 22px;
+    color: #ff2a2a;
+}
+
+/* ============================= */
+/* RIGHT - Network/Audio/Battery */
+/* ============================= */
+#network,
+#pulseaudio,
+#battery {
+    background-color: #1a0a2a;
+    border-left: none; /* 1px solid #cc3eff; */
+    padding: 0 10px;
+    color: #ff2a2a;
+}
+
+/* ==================== */
+/* THEME NAME INDICATOR */
+/* ==================== */
+#custom-theme {
+    color: #ff2a2a;
+    padding: 0 10px;
+}
+
+/* =============== */
+/* POWER ICON AREA */
+/* =============== */
+#custom-power {
+    font-size: 13px;
+    padding-right: 25px;
+    padding-left: 20px;
+    background-color: #1a0a2a;
+    color: #ff2a2a;
+}
+
+
+/* ===== Generic Unknown Modules Styling ===== */
+.modules-left > *,
+.modules-center > *,
+.modules-right > * {
+    background: transparent;
+    color: #ffffff;
+    padding: 0 8px;
+    min-height: 0;
+    border-left: none;
+}
+
+/* Optional: Add spacing between major sections (left/center/right) if needed */
+.modules-left, .modules-center, .modules-right {
+    margin: 0 8px;
+}
+

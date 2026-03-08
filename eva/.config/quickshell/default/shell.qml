@@ -67,6 +67,36 @@ PanelWindow {
         }
         Item { Layout.fillWidth: true}
 
+        Rectangle {
+            width: 100
+            height: 30
+            color: root.colBg
+
+            Text {
+                id: network_text
+                anchors.centerIn: parent
+                text: "🌐"
+                color: root.colFg
+                font { pixelSize: fontSize; bold: true}
+            }
+
+            MouseArea {
+                anchors.fill: parent
+                cursorShape: Qt.PointingHandCursor
+                onClicked: {
+                    network_text.text = "🔄";
+                    root.run(["sh", "-c", 
+                    "SSID=$(nmcli -t -f SSID device wifi list | wofi --dmenu -p 'Select Network') && " + // | xargs -I {} nmcli device wifi connect '{}'"]);
+                    "PASS=$(wofi --dmenu -p 'Enter Password for $SSID' --password) && " +
+                    "nmcli dev wifi connect '$SSID' password '$PASS'"
+                    ]);
+                    network_text.text = "🌐";
+                }
+            }
+        }
+
+        Item { Layout.fillWidth: true}
+
         Text {
             text: "CPU: " + cpuUsage + "%"
             color: root.colYellow
@@ -197,15 +227,19 @@ PanelWindow {
                 cursorShape: Qt.PointingHandCursor
                 acceptedButtons: Qt.LeftButton | Qt.RightButton
 
-                onClicked: (mouse => {
-                    if (mouse.button === Qt.LeftButton)
-                        root.run(["systemctl", "poweroff"])
-                    else if (mouse.button === Qt.RightButton)
-                        root.run(["systemctl", "reboot"])
-                })
+                onClicked: {
+                    if (mouse.button === Qt.LeftButton) {
+                        console.log("Left click: Power off");
+                        root.run(["pkexec", "systemctl", "poweroff"]);
+                    } else if (mouse.button === Qt.RightButton) {
+                        console.log("Right click: Reboot");
+                        root.run(["pkexec", "systemctl", "reboot"]);
+                    }
+                }
             }
         }
 
         Rectangle { width: 1; height: 16; color: root.colMuted}
+
     }
 }

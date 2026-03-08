@@ -1,0 +1,5 @@
+Switch to another theme
+stow -v -R -t ~ eva
+
+unlink current theme
+stow -v -D -t ~ eva

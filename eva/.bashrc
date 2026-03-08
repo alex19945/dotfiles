@@ -98,7 +98,9 @@ PROMPT_COMMAND='PS1="\n\[\033[1;97m\]╭─ $(get_box_info)\n\
 
 # 💻 Optional: Colorful ls
 alias ls='ls --color=auto'
+alias refresh="source ~/.bashrc"
 fastfetch #--logo "$HOME/.config/fastfetch/ascii/rei.txt"
 export PATH="$HOME/bin:$PATH"
+export PATH="$PATH:/usr/bin"
 
 . "$HOME/.local/bin/env"
