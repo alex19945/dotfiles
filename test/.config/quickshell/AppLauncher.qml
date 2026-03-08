@@ -414,7 +414,7 @@ Rectangle {
         Qt.callLater(() => {
             if (needsTerminal) {
                 // Launch in Kitty terminal
-                Quickshell.execDetached(["hyprctl", "dispatch", "exec", "kitty -e sh -c '" + command + "'"])
+                Quickshell.execDetached(["hyprctl", "dispatch", "exec", "alacritty -e sh -c '" + command + "'"])
             } else {
                 // Use hyprctl dispatch for proper window management
                 Quickshell.execDetached(["hyprctl", "dispatch", "exec", command])
