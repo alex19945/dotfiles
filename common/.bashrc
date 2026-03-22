@@ -99,8 +99,16 @@ PROMPT_COMMAND='PS1="\n\[\033[1;97m\]╭─ $(get_box_info)\n\
 # 💻 Optional: Colorful ls
 alias ls='ls --color=auto'
 alias refresh="source ~/.bashrc"
+alias cls="clear"
+alias nv="nvim"
+alias unstow="stow -v -D -t ~/github/dotfiles"
+alias restow="stow -v -R -t ~/github/dotfiles"
 fastfetch #--logo "$HOME/.config/fastfetch/ascii/rei.txt"
 export PATH="$HOME/bin:$PATH"
 export PATH="$PATH:/usr/bin"
 
 . "$HOME/.local/bin/env"
+
+alias dots="cd ~/github/dotfiles/"
+alias github="cd ~/github/"
+alias lzg="lazygit"
