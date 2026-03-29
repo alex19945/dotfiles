@@ -110,5 +110,5 @@ export PATH="$PATH:/usr/bin"
 . "$HOME/.local/bin/env"
 
 alias dots="cd ~/github/dotfiles/"
-alias github="cd ~/github/"
-alias lzg="lazygit"
+alias gt="cd ~/github/"
+alias lg="lazygit"
