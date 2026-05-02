@@ -47,7 +47,7 @@ editor_option_save_position=true
 editor_option_auto_para_formatting=false
 editor_option_typewriter_wrap=false
 editor_edit_confirm_save=true
-editor_syntax_highlighting=true
+editor_syntax_highlighting=false
 editor_persistent_selections=true
 editor_drop_selection_on_copy=true
 editor_cursor_beyond_eol=false
@@ -88,7 +88,7 @@ filepos_max_saved_entries=1024
 
 [Layout]
 output_lines=0
-left_panel_size=25
+left_panel_size=104
 top_panel_size=0
 message_visible=true
 keybar_visible=true
@@ -142,6 +142,6 @@ select_flags=6
 
 [Panelize]
 Find *.orig efter patchning=find . -name \\*.orig -print
-Find rester efter lapning=find . -name \\*.rej -print
-Find SUID- og SGID-programmer=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
 Ændrede git-filer=git ls-files --modified
+Find SUID- og SGID-programmer=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
+Find rester efter lapning=find . -name \\*.rej -print

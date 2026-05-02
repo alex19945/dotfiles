@@ -1,0 +1,11 @@
+alias dots="cd ~/github/dotfiles/"
+alias repo="cd ~/github/"
+alias lg="lazygit"
+alias rhyp="hyprctl reload"
+alias ls='ls --color=auto'
+alias refresh="source ~/.bashrc"
+alias cls="clear"
+alias nv="nvim"
+alias smux="tmux source-file ~/.tmux.conf"
+alias unstow="stow -v -D -t ~/github/dotfiles"
+alias restow="stow -v -R -t ~/github/dotfiles"
